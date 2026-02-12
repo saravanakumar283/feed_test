@@ -1,0 +1,21 @@
+config PACKAGE_greeter_plugin
+	tristate
+	select SAH_AMX_GREETER_PLUGIN
+
+if PACKAGE_greeter_plugin
+
+menu "Select greeter_plugin build options"
+	depends on PACKAGE_greeter_plugin
+
+config SAH_AMX_GREETER_PLUGIN
+	bool "Build Ambiorix Greeter data model plugin"
+	default y
+
+config SAH_AMX_GREETER_PLUGIN_ORDER
+	int "Greeter plugin start up order"
+	default 60
+
+endmenu
+
+endif
+
